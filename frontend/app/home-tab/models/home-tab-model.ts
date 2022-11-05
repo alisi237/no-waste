@@ -1,6 +1,9 @@
-import { ItemStorage } from "../../inventory/models/storage-model";
-
-export interface Item {
+export interface ItemStorage {
+    id: number;
+    name: string;
+  }
+  
+  export interface Item {
     id: number;
     name: string;
     date: Date;

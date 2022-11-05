@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { ItemsRestService } from '../services/items-service';
-import { Item } from '../models/items-model';
-import { ItemStorage } from '../../inventory/models/storage-model';
+import { ItemsRestService } from 'frontend/app/home-tab/services/home-tab-service';
+import { Item } from 'frontend/app/home-tab/models/home-tab-model';
+import { ItemStorage } from 'frontend/app/home-tab/models/home-tab-model';
 import {take} from 'rxjs/operators';
 
 @Component({
@@ -41,7 +41,7 @@ export class ItemsComponent {
 
   confirm() {
     this.modal.dismiss(null, 'confirm');
-    this.addItem();
+    this.addItem({id: 2, name: this.name, date: this.date, amount: this.amount, storage: this.storage});
     this.resetFields();
   }
 
@@ -51,8 +51,7 @@ export class ItemsComponent {
     this.amount = null;
   }
 
-  addItem() {
-    const item = {id: 2, name: this.name, date: this.date, amount: this.amount, storage: this.storage};
+  addItem(item: Item) {
     this.itemsRestService.addItem(item).pipe(take(1)).subscribe();
     /*this.items.push(
       {
