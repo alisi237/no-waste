@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeTabPage } from './home-tab.page';
 
 import { HomeTabPageRoutingModule } from './home-tab-routing.module';
-import { ItemsComponentModule } from './modals/items/items.module';
-import { InventoryComponentModule } from './modals/inventory/inventory.module';
+import { ItemsComponentModule } from '../modals/items/components/items.module';
+import { InventoryComponentModule } from '../modals/inventory/components/inventory.module';
 
 @NgModule({
   imports: [
