@@ -1,0 +1,7 @@
+{
+  "name": "NoWaste",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

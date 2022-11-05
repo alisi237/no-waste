@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar class="header">
+      <ion-title size="large">Home of NoWaste</ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="refresh()" id="open-items-modal" class="home-button">ADD ITEM</ion-button>
+          <app-items></app-items>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">SHOW INVENTORY</ion-button>
+          <app-inventory></app-inventory>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="home-button">SHOPPING LIST</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="home-button">SHOW RECIPES</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="home-button">...</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="home-button">...</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-modal trigger="open-inventory-modal">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>INVENTORY</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list *ngFor="let storage of storages">
+        <ion-list-header>
+          {{ storage.name }}
+            <ion-button class="button-header" (click)="showAlert(storage)">X</ion-button>
+        </ion-list-header>
+        <ion-item *ngFor="let item of storage.items">
+          <ion-avatar slot="start">
+            <!-- <img src="./food.jpeg" /> -->
+            <ion-icon name="ellipse"></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h2> {{ item.name }} </h2>
+            <h3> {{ item.date }} </h3>
+          </ion-label>
+          <ion-label slot="end">
+            <h1>
+              <ion-button class="button-list" (click)="amountDown(item, storage)">-</ion-button>
+                {{ item.amount }}
+              <ion-button class="button-list" (click)="amountUp(item)">+</ion-button>
+            </h1>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>
