@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
+import { ItemsRestService } from 'frontend/app/home-tab/services/home-tab-service';
+import {map, take} from 'rxjs/operators';
+import { Item } from 'frontend/app/home-tab/models/home-tab-model';
 
 @Component({
   selector: 'app-inventory',
@@ -11,19 +14,22 @@ export class InventoryComponent {
 
   name: string;
   storages: any;
-  items: any;
+  items: Item[];
 
-  constructor(private alertController: AlertController) {
-    this.items = [];
+  constructor(private alertController: AlertController, private readonly itemsRestService: ItemsRestService) {
     this.storages = [];
+    this.items = [];
   }
 
   getItems() {
+    this.itemsRestService.getItems().pipe(map((items: Item[]) => items.map(item => this.items.push(item)))).subscribe();
     return this.items;
+    // return this.items;
   }
 
   addItem(item: any) {
-    this.items.push(item);
+    this.itemsRestService.addItem(item).pipe().subscribe();
+    // this.items.push(item);
   }
 
   getStorages() {
@@ -55,27 +61,29 @@ export class InventoryComponent {
   }
 
   fillStorages() {
-    if(this.items) {
-      this.items.forEach(item => {
+    /*
+    const items = this.getItems();
+    if(items) {
+      items.forEach(item => {
         this.storages.forEach(storage => {
           if(storage.name === item.storage.trim() && !storage.items.includes(item)) {
             storage.items.push(item);
           }
         });
       });
-    }
+    }*/
   }
 
   amountUp(item: any) {
     item.amount += 1;
   }
 
-  amountDown(item: any, storage: any) {
+  amountDown(item: any) {
     if(item.amount > 1) {
       item.amount -= 1;
     }
     else {
-      this.removeItem(item, storage);
+      this.removeItem(item);
     }
   }
 
@@ -114,8 +122,9 @@ export class InventoryComponent {
     });
   }
 
-  removeItem(item: any, storage: any) {
-    this.remove(this.items, item);
-    this.remove(storage.items, item);
+  removeItem(item: Item) {
+    this.itemsRestService.removeItem(item.id).pipe(take(1)).subscribe();
+    //this.remove(this.items, item);
+    //this.remove(storage.items, item);
   }
 }

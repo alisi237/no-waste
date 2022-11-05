@@ -3,7 +3,7 @@ import { IonModal } from '@ionic/angular';
 import { ItemsRestService } from 'frontend/app/home-tab/services/home-tab-service';
 import { Item } from 'frontend/app/home-tab/models/home-tab-model';
 import { ItemStorage } from 'frontend/app/home-tab/models/home-tab-model';
-import {take} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-items',
@@ -19,14 +19,16 @@ export class ItemsComponent {
   newStorage: string;
   storage: ItemStorage;
   storages: ItemStorage[];
-  items = new Array();
+  items: Item[];
 
   constructor(private readonly itemsRestService: ItemsRestService) {
     this.storages = [];
+    this.items = [];
     
   }
 
   getItems() {
+    this.itemsRestService.getItems().pipe(map((items: Item[]) => items.map(item => this.items.push(item)))).subscribe();
     return this.items;
   }
 
@@ -41,7 +43,8 @@ export class ItemsComponent {
 
   confirm() {
     this.modal.dismiss(null, 'confirm');
-    this.addItem({id: 2, name: this.name, date: this.date, amount: this.amount, storage: this.storage});
+    // id needs to be set via database
+    this.addItem({id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage});
     this.resetFields();
   }
 
@@ -52,7 +55,7 @@ export class ItemsComponent {
   }
 
   addItem(item: Item) {
-    this.itemsRestService.addItem(item).pipe(take(1)).subscribe();
+    this.itemsRestService.addItem(item).pipe().subscribe();
     /*this.items.push(
       {
       name: this.name,
