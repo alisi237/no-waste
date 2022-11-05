@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { ItemsRestService } from 'frontend/app/home-tab/services/home-tab-service';
-import { Item } from 'frontend/app/home-tab/models/home-tab-model';
-import { ItemStorage } from 'frontend/app/home-tab/models/home-tab-model';
+import { ItemsRestService } from 'src/app/home-tab/services/home-tab-service';
+import { Item } from 'src/app/home-tab/models/home-tab-model';
+import { ItemStorage } from 'src/app/home-tab/models/home-tab-model';
 import {map} from 'rxjs/operators';
 
 @Component({

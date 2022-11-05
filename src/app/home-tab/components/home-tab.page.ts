@@ -18,6 +18,7 @@ export class HomeTabPage {
   }
 
   // to be deleted
+  /*
   refresh() {
     this.refreshStorages();
     this.refreshItems();
@@ -36,5 +37,5 @@ export class HomeTabPage {
     this.items.forEach(item => {
       this.inventoryComponent.addItem(item);
     });
-  }
+  } */
 }

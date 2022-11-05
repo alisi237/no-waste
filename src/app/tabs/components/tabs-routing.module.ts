@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'home-tab',
-        loadChildren: () => import('../home-tab/home-tab.module').then(m => m.HomeTabPageModule)
+        loadChildren: () => import('../../home-tab/components/home-tab.module').then(m => m.HomeTabPageModule)
       },
       {
         path: 'scan-tab',
-        loadChildren: () => import('../scan-tab/scan-tab.module').then(m => m.ScanTabPageModule)
+        loadChildren: () => import('../../scan-tab/components/scan-tab.module').then(m => m.ScanTabPageModule)
       },
       {
         path: '',

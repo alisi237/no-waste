@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
-import { ItemsRestService } from 'frontend/app/home-tab/services/home-tab-service';
+import { ItemsRestService } from 'src/app/home-tab/services/home-tab-service';
 import {map, take} from 'rxjs/operators';
-import { Item } from 'frontend/app/home-tab/models/home-tab-model';
+import { Item } from 'src/app/home-tab/models/home-tab-model';
 
 @Component({
   selector: 'app-inventory',
