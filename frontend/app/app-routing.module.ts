@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GroupsPage } from './groups/groups.page';
-import { HomeTabPage } from './home-tab/home-tab.page';
-import { PreferencesPage } from './preferences/preferences.page';
-import { ProfilePage } from './profile/profile.page';
+import { GroupsPage } from './groups/components/groups.page';
+import { HomeTabPage } from './home-tab/components/home-tab.page';
+import { PreferencesPage } from './preferences/components/preferences.page';
+import { ProfilePage } from './profile/components/profile.page';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/components/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'home-tab',
     component: HomeTabPage,
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/components/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'preferences',

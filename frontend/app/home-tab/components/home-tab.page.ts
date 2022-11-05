@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { InventoryComponent } from './modals/inventory/inventory.component';
-import { ItemsComponent } from './modals/items/items.component';
+import { InventoryComponent } from '../modals/inventory/components/inventory.component';
+import { ItemsComponent } from '../modals/items/components/items.component';
 
 @Component({
   selector: 'app-home-tab',
@@ -17,6 +17,7 @@ export class HomeTabPage {
   constructor() {
   }
 
+  // to be deleted
   refresh() {
     this.refreshStorages();
     this.refreshItems();
