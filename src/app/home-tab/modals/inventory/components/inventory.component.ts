@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
-import { ItemsRestService } from 'src/app/home-tab/services/home-tab-service';
+import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
 import {map, take} from 'rxjs/operators';
 import { Item } from 'src/app/home-tab/models/home-tab-model';
 
@@ -16,7 +16,7 @@ export class InventoryComponent {
   storages: any;
   items: Item[];
 
-  constructor(private alertController: AlertController, private readonly itemsRestService: ItemsRestService) {
+  constructor(private alertController: AlertController, private readonly itemsRestService: HomeRestService) {
     this.storages = [];
     this.items = [];
   }

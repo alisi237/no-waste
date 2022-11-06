@@ -9,6 +9,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
+  <ion-button id="open-registration" expand="block">Register</ion-button>
 
+  <ion-modal #modal trigger="open-registration">
+    <ion-content>
+      <ion-toolbar>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="modal.dismiss(null, 'cancel')">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Registration</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss(null, 'confirm')" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+      </ion-toolbar>
+      <ion-list>
+        <ion-item>
+          <ion-label>Name:</ion-label>
+          <ion-input placeholder="E.g. John Doe"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-input type="email" placeholder="email@domain.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password:</ion-label>
+          <ion-input type="password" value=""></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Repeat Password:</ion-label>
+          <ion-input type="password" value=""></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal>
 </ion-content>

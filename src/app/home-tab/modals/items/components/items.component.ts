@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { ItemsRestService } from 'src/app/home-tab/services/home-tab-service';
+import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
 import { Item } from 'src/app/home-tab/models/home-tab-model';
 import { ItemStorage } from 'src/app/home-tab/models/home-tab-model';
 import {map} from 'rxjs/operators';
@@ -21,7 +21,7 @@ export class ItemsComponent {
   storages: ItemStorage[];
   items: Item[];
 
-  constructor(private readonly itemsRestService: ItemsRestService) {
+  constructor(private readonly itemsRestService: HomeRestService) {
     this.storages = [];
     this.items = [];
     
