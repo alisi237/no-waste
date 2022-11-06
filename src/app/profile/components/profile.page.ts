@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-profile',
@@ -6,7 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['profile.page.scss']
 })
 export class ProfilePage {
+  @ViewChild(IonModal) modal: IonModal;
+
+  name: string;
+  email: string;
+  password: string;
+  passwconf: string;
 
   constructor() {}
+
+  resetFields() {
+    this.name = '';
+    this.email = '';
+    this.password = '';
+    this.passwconf = '';
+  }
+
+  onWillDismiss(event: Event) {
+      this.resetFields();
+  }
 
 }

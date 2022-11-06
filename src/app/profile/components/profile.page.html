@@ -12,7 +12,7 @@
 <ion-content class="ion-padding">
   <ion-button id="open-registration" expand="block">Register</ion-button>
 
-  <ion-modal #modal trigger="open-registration">
+  <ion-modal #modal trigger="open-registration" (willDismiss)="onWillDismiss($event)">
     <ion-content>
       <ion-toolbar>
         <ion-header>
@@ -29,20 +29,20 @@
       </ion-toolbar>
       <ion-list>
         <ion-item>
-          <ion-label>Name:</ion-label>
-          <ion-input placeholder="E.g. John Doe"></ion-input>
+          <ion-label position="stacked">NAME:</ion-label>
+          <ion-input type="text" placeholder="E.g. John Doe" [(ngModel)]="name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Email:</ion-label>
-          <ion-input type="email" placeholder="email@domain.com"></ion-input>
+          <ion-label position="stacked">EMAIL:</ion-label>
+          <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Password:</ion-label>
-          <ion-input type="password" value=""></ion-input>
+          <ion-label position="stacked">PASSWORD:</ion-label>
+          <ion-input type="password" value="" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Repeat Password:</ion-label>
-          <ion-input type="password" value=""></ion-input>
+          <ion-label position="stacked">CONFIRM PASSWORD:</ion-label>
+          <ion-input type="password" value="" [(ngModel)]="passwconf"></ion-input>
         </ion-item>
       </ion-list>
     </ion-content>
