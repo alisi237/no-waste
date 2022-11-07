@@ -16,4 +16,4 @@ import { InventoryComponentRoutingModule } from './inventory-routing.module';
   declarations: [InventoryComponent],
   exports: [InventoryComponent]
 })
-export class InventoryComponentModule {}
+export class InventoryComponentModule { }

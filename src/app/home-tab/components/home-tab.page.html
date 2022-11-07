@@ -8,32 +8,32 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-grid class="grid">
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="refresh()" id="open-items-modal" class="home-button">ADD ITEM</ion-button>
-          <app-items></app-items>
-        </ion-col>
-        <ion-col>
-          <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">SHOW INVENTORY</ion-button>
-          <app-inventory></app-inventory>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button class="home-button">SHOPPING LIST</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button class="home-button">SHOW RECIPES</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button class="home-button">...</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button class="home-button">...</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="refresh()" id="open-items-modal" class="home-button">ADD ITEM</ion-button>
+        <app-items></app-items>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">SHOW INVENTORY</ion-button>
+        <app-inventory></app-inventory>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="home-button">SHOPPING LIST</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="home-button">SHOW RECIPES</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="home-button">...</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="home-button">...</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

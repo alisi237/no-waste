@@ -15,7 +15,7 @@
       <ion-list *ngFor="let storage of storages">
         <ion-list-header>
           {{ storage.name }}
-            <ion-button class="button-header" (click)="showAlert(storage)">X</ion-button>
+          <ion-button class="button-header" (click)="showAlert(storage)">X</ion-button>
         </ion-list-header>
         <ion-item *ngFor="let item of storage.items">
           <ion-avatar slot="start">
@@ -29,7 +29,7 @@
           <ion-label slot="end">
             <h1>
               <ion-button class="button-list" (click)="amountDown(item)">-</ion-button>
-                {{ item.amount }}
+              {{ item.amount }}
               <ion-button class="button-list" (click)="amountUp(item)">+</ion-button>
             </h1>
           </ion-label>

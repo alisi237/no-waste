@@ -16,4 +16,4 @@ import { GroupsPageRoutingModule } from './groups-routing.module';
   ],
   declarations: [GroupsPage]
 })
-export class PreferencesPageModule {}
+export class PreferencesPageModule { }

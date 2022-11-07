@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +14,9 @@ export class ProfilePage {
   password: string;
   passwconf: string;
 
-  constructor() {}
+  constructor() {
+
+  }
 
   resetFields() {
     this.name = '';
@@ -25,7 +26,7 @@ export class ProfilePage {
   }
 
   onWillDismiss(event: Event) {
-      this.resetFields();
+    this.resetFields();
   }
 
 }

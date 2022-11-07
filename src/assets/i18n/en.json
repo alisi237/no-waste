@@ -1,0 +1,45 @@
+{
+    "noWaste": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "menu": "Menu",
+        "home": {
+            "header": "Home of NoWaste",
+            "addItem": "ADD ITEM",
+            "showInventory": "SHOW INVENTORY",
+            "shoppingList": "SHOPPING LIST",
+            "showRecipes": "SHOW RECIPES",
+            "inventory": {
+                "header": "INVENTORY"
+            },
+            "items": {
+                "header": "ADD ITEM",
+                "name": "PRODUCT NAME:",
+                "bestBefore": "BEST BEFORE:",
+                "amount": "AMOUNT:",
+                "storage": "STORAGE:"
+            }
+        },
+        "profile": {
+            "header": "Profile",
+            "registration": {
+                "register": "Register",
+                "header": "Registration",
+                "name": "NAME:",
+                "email": "EMAIL:",
+                "password": "PASSWORD:",
+                "confirm": "CONFIRM PASSWORD:"
+            }
+        },
+        "preferences": {
+            "header":" Preferences"
+        },
+        "scan": {
+            "header": "Scan"
+        },
+        "tabs": {
+            "home": "Home",
+            "scan": "Scan"
+        }
+    }
+}

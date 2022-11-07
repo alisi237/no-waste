@@ -16,4 +16,4 @@ import { ScanTabPageRoutingModule } from './scan-tab-routing.module';
   ],
   declarations: [ScanTabPage]
 })
-export class ScanTabPageModule {}
+export class ScanTabPageModule { }

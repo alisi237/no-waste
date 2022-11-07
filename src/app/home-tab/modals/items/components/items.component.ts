@@ -3,7 +3,7 @@ import { IonModal } from '@ionic/angular';
 import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
 import { Item } from 'src/app/home-tab/models/home-tab-model';
 import { ItemStorage } from 'src/app/home-tab/models/home-tab-model';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-items',
@@ -24,7 +24,7 @@ export class ItemsComponent {
   constructor(private readonly itemsRestService: HomeRestService) {
     this.storages = [];
     this.items = [];
-    
+
   }
 
   getItems() {
@@ -44,7 +44,7 @@ export class ItemsComponent {
   confirm() {
     this.modal.dismiss(null, 'confirm');
     // id needs to be set via database
-    this.addItem({id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage});
+    this.addItem({ id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage });
     this.resetFields();
   }
 
@@ -67,7 +67,7 @@ export class ItemsComponent {
   }
 
   addToStorages(newStorage: ItemStorage) {
-    
+
     this.storages.push(newStorage);
     this.newStorage = '';
   }

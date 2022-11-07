@@ -16,4 +16,4 @@ import { PreferencesPageRoutingModule } from './preferences-routing.module';
   ],
   declarations: [PreferencesPage]
 })
-export class PreferencesPageModule {}
+export class PreferencesPageModule { }

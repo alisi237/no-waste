@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
 import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
-import {map, take} from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Item } from 'src/app/home-tab/models/home-tab-model';
 
 @Component({
@@ -37,15 +37,15 @@ export class InventoryComponent {
   }
 
   addStorage(storage: any) {
-    if(!this.storageAlreadyExists(storage)) {
-      this.storages.push({ name: storage, items: new Array()});
+    if (!this.storageAlreadyExists(storage)) {
+      this.storages.push({ name: storage, items: new Array() });
     }
   }
 
   storageAlreadyExists(storageName: any) {
     let isIncluded = false;
     this.storages.forEach(storage => {
-      if(storage.name === storageName) {
+      if (storage.name === storageName) {
         isIncluded = true;
       }
     });
@@ -79,7 +79,7 @@ export class InventoryComponent {
   }
 
   amountDown(item: any) {
-    if(item.amount > 1) {
+    if (item.amount > 1) {
       item.amount -= 1;
     }
     else {
@@ -116,7 +116,7 @@ export class InventoryComponent {
   removeStorage(storage: any) {
     this.remove(this.storages, storage);
     this.items.forEach(item => {
-      if(item.storage === storage.name) {
+      if (item.storage === storage.name) {
         this.remove(this.items, item);
       }
     });

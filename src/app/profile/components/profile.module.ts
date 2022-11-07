@@ -15,4 +15,4 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
   ],
   declarations: [ProfilePage]
 })
-export class ProfilePageModule {}
+export class ProfilePageModule { }

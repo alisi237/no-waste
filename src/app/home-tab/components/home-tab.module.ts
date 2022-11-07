@@ -19,4 +19,4 @@ import { InventoryComponentModule } from '../modals/inventory/components/invento
   ],
   declarations: [HomeTabPage]
 })
-export class HomeTabPageModule {}
+export class HomeTabPageModule { }

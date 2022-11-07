@@ -1,7 +1,7 @@
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Item } from '../models/home-tab-model';
 
 @Injectable({
@@ -16,29 +16,29 @@ export class HomeRestService {
 
   addItem(item: Item): Observable<Item> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<Item>(HomeRestService.DATABASE_URL, item, {headers})
-    .pipe(catchError(err => {
+    return this.http.post<Item>(HomeRestService.DATABASE_URL, item, { headers })
+      .pipe(catchError(err => {
         console.log('tbd', err);
         return throwError(err);
-    }));
+      }));
 
   }
 
   getItems(): Observable<Item[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get<Item[]>(HomeRestService.DATABASE_URL, {headers})
+    return this.http.get<Item[]>(HomeRestService.DATABASE_URL, { headers })
       .pipe(catchError(err => {
         console.log('tbd', err);
         return throwError(err);
-    }));
+      }));
   }
 
   removeItem(id: number): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.delete(HomeRestService.DATABASE_URL + '/' + id, {headers})
+    return this.http.delete(HomeRestService.DATABASE_URL + '/' + id, { headers })
       .pipe(catchError(err => {
         console.log('tbd', err);
         return throwError(err);
-    }));
+      }));
   }
 }

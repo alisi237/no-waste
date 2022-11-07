@@ -1,12 +1,12 @@
 export interface ItemStorage {
-    name: string;
-  }
+  name: string;
+}
 
-  export interface Item {
-    id: number;
-    name: string;
-    date: Date;
-    amount: number;
-    storage: ItemStorage;
-  }
+export interface Item {
+  id: number;
+  name: string;
+  date: Date;
+  amount: number;
+  storage: ItemStorage;
+}
 
