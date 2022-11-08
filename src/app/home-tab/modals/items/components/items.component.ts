@@ -17,7 +17,7 @@ export class ItemsComponent {
   date: Date;
   amount: number;
   newStorage: string;
-  storage: ItemStorage;
+  storage: string;
   storages: ItemStorage[];
   items: Item[];
 
@@ -44,7 +44,7 @@ export class ItemsComponent {
   confirm() {
     this.modal.dismiss(null, 'confirm');
     // id needs to be set via database
-    this.addItem({ id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage });
+    this.addItem({ name: this.name, place: this.storage });
     this.resetFields();
   }
 
@@ -67,7 +67,6 @@ export class ItemsComponent {
   }
 
   addToStorages(newStorage: ItemStorage) {
-
     this.storages.push(newStorage);
     this.newStorage = '';
   }

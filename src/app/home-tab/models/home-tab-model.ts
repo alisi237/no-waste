@@ -3,10 +3,7 @@ export interface ItemStorage {
 }
 
 export interface Item {
-  id: number;
   name: string;
-  date: Date;
-  amount: number;
-  storage: ItemStorage;
+  place: string;
 }
 

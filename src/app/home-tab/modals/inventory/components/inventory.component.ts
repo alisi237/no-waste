@@ -83,7 +83,7 @@ export class InventoryComponent {
       item.amount -= 1;
     }
     else {
-      this.removeItem(item);
+      //this.removeItem(item);
     }
   }
 
@@ -101,7 +101,7 @@ export class InventoryComponent {
           text: 'Yes',
           role: 'confirm',
           handler: () => {
-            this.removeStorage(storage);
+            //this.removeStorage(storage);
           },
         },
       ],
@@ -112,7 +112,7 @@ export class InventoryComponent {
   remove(array: any, element: any) {
     array.splice(array.indexOf(element), 1);
   }
-
+/*
   removeStorage(storage: any) {
     this.remove(this.storages, storage);
     this.items.forEach(item => {
@@ -126,5 +126,5 @@ export class InventoryComponent {
     this.itemsRestService.removeItem(item.id).pipe(take(1)).subscribe();
     //this.remove(this.items, item);
     //this.remove(storage.items, item);
-  }
+  }*/
 }

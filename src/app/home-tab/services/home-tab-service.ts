@@ -9,14 +9,14 @@ import { Item } from '../models/home-tab-model';
 })
 export class HomeRestService {
 
-  private static readonly DATABASE_URL = '/api/v1/groceries/routes/grocerieRoutes';
+  private static readonly DATABASE_URL = 'http://localhost:6000/api/v1/groceries/';
 
   constructor(private http: HttpClient) {
   }
 
   addItem(item: Item): Observable<Item> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<Item>(HomeRestService.DATABASE_URL, item, { headers })
+    return this.http.post<Item>(HomeRestService.DATABASE_URL, {name: 'dingens', place: 'bummens'}, { headers })
       .pipe(catchError(err => {
         console.log('tbd', err);
         return throwError(err);

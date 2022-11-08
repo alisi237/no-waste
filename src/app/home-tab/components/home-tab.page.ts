@@ -17,6 +17,11 @@ export class HomeTabPage {
   constructor() {
   }
 
+  refresh() {
+    this.itemsComponent.addItem({name: 'apple', place: 'fridge'});
+  }
+
+
   // to be deleted
   /*
   refresh() {
