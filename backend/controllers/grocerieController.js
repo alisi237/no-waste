@@ -14,6 +14,21 @@ exports.createGrocerie = catchAsync(async (req, res, next) => {
   })
 })
 
+exports.getAllGroceries = catchAsync(async (req, res, next) => {
+  const groceries = await Grocerie.find()
+
+  if (!groceries) {
+    return next(new AppError('No groceries', 404))
+  }
+
+  res.status(201).json({
+    status: 'success',
+    data: {
+      groceries
+    }
+  })
+})
+
 exports.deleteGrocerie = catchAsync(async (req, res, next) => {
   const grocerie = await Grocerie.findByIdAndDelete(req.params.id)
 
