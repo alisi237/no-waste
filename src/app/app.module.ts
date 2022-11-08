@@ -9,6 +9,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +21,7 @@ import { AppComponent } from './app.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -36,8 +42,4 @@ export class AppModule {
 
   }
 
-}
-
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
 }

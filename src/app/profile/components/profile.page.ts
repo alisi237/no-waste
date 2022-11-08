@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
@@ -14,8 +15,9 @@ export class ProfilePage {
   password: string;
   passwconf: string;
 
-  constructor() {
-
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
 
   resetFields() {

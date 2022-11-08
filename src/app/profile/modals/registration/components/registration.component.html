@@ -1,0 +1,35 @@
+<ion-modal trigger="open-registration" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="modal.dismiss(null, 'cancel')">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Registration</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="modal.dismiss(null, 'confirm')" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">NAME:</ion-label>
+          <ion-input type="text" placeholder="E.g. John Doe" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">EMAIL:</ion-label>
+          <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">PASSWORD:</ion-label>
+          <ion-input type="password" value="" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">CONFIRM PASSWORD:</ion-label>
+          <ion-input type="password" value="" [(ngModel)]="passwconf"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>
