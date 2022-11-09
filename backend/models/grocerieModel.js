@@ -10,7 +10,12 @@ const grocerieSchema = new mongoose.Schema({
     required: [true, 'Please store your food somewhere']
   },
   bestBefore: {
-    type: Date
+    type: Date,
+    required: [true, 'Please provide a best before date.']
+  },
+  amount: {
+    type: Number,
+    required: [true, 'Please add the amount of your item.']
   }
 })
 

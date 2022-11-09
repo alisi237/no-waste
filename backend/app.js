@@ -4,6 +4,7 @@ const AppError = require('./utils/AppError')
 const globalErrorHandler = require('./controllers/errorController')
 const grocerieRouter = require('./routes/grocerieRoutes')
 const userRouter = require('./routes/userRoutes')
+const storageRouter = require('./routes/storageRoutes')
 
 const app = express()
 
@@ -20,5 +21,6 @@ app.use((req, res, next) => {
 // 2) ROUTES
 app.use('/api/v1/groceries', grocerieRouter)
 app.use('/api/v1/users', userRouter)
+app.use('/api/v1/storages', storageRouter)
 
 module.exports = app

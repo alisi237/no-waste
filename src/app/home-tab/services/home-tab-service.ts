@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ItemsComponent } from '../modals/items/components/items.component';
 import { Item } from '../models/home-tab-model';
 
 @Injectable({
@@ -19,7 +18,7 @@ export class HomeRestService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     console.log('addItem was triggered');
     
-    return this.http.post<Item>(HomeRestService.DATABASE_URL, {name: item.name, place: item.storage}, { headers })
+    return this.http.post<Item>(HomeRestService.DATABASE_URL, {name: item.name, place: item.storage, bestBefore: item.date, amount: item.amount}, { headers })
       .pipe(catchError(err => {
         console.log('Unexpected error: Could not add item to database.', err);
         return throwError(err);
