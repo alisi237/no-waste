@@ -12,7 +12,7 @@ import { InventoryComponentModule } from '../home-tab/modals/inventory/component
 @NgModule({
   declarations: [
     ProfilePage,
-    HomeTabPage,
+    HomeTabPage
   ],
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ import { InventoryComponentModule } from '../home-tab/modals/inventory/component
     TranslateModule,
     HttpClientModule,
     ProfilePage,
-    HomeTabPage,
+    HomeTabPage
   ]
 })
 export class SharedModule { }
