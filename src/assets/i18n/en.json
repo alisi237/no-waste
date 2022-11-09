@@ -2,7 +2,13 @@
     "noWaste": {
         "cancel": "Cancel",
         "confirm": "Confirm",
-        "menu": "Menu",
+        "menu": {
+            "menu": "Menu",
+            "home": "Home",
+            "preferences": "Preferences",
+            "profile": "Profile",
+            "groups": "Groups"
+        },
         "home": {
             "header": "Home of NoWaste",
             "addItem": "ADD ITEM",

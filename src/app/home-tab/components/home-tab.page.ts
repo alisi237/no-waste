@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { InventoryComponent } from '../modals/inventory/components/inventory.component';
 import { ItemsComponent } from '../modals/items/components/items.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-tab',
@@ -14,7 +15,9 @@ export class HomeTabPage {
   items: any;
   storages: any;
 
-  constructor() {
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
 
   refresh() {

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home of NoWaste</ion-title>
+    <ion-title>{{ 'noWaste.home.header' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,20 +11,20 @@
   <ion-grid class="grid">
     <ion-row>
       <ion-col>
-        <ion-button (click)="refresh()" id="open-items-modal" class="home-button">ADD ITEM</ion-button>
+        <ion-button (click)="refresh()" id="open-items-modal" class="home-button">{{ 'noWaste.home.addItem' | translate}}</ion-button>
         <app-items></app-items>
       </ion-col>
       <ion-col>
-        <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">SHOW INVENTORY</ion-button>
+        <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">{{ 'noWaste.home.showInventory' | translate}}</ion-button>
         <app-inventory></app-inventory>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button class="home-button">SHOPPING LIST</ion-button>
+        <ion-button class="home-button">{{ 'noWaste.home.shoppingList' | translate}}</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="home-button">SHOW RECIPES</ion-button>
+        <ion-button class="home-button">{{ 'noWaste.home.showRecipes' | translate}}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>

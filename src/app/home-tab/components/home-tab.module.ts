@@ -2,11 +2,9 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HomeTabPage } from './home-tab.page';
 
 import { HomeTabPageRoutingModule } from './home-tab-routing.module';
-import { ItemsComponentModule } from '../modals/items/components/items.module';
-import { InventoryComponentModule } from '../modals/inventory/components/inventory.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -14,9 +12,8 @@ import { InventoryComponentModule } from '../modals/inventory/components/invento
     CommonModule,
     FormsModule,
     HomeTabPageRoutingModule,
-    ItemsComponentModule,
-    InventoryComponentModule
+    SharedModule
   ],
-  declarations: [HomeTabPage]
+  declarations: []
 })
 export class HomeTabPageModule { }
