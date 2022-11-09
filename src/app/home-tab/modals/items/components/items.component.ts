@@ -43,7 +43,6 @@ export class ItemsComponent {
 
   confirm() {
     this.modal.dismiss(null, 'confirm');
-    // id needs to be set via database
     this.addItem({ id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage.trim() });
     this.resetFields();
   }
@@ -58,8 +57,8 @@ export class ItemsComponent {
     this.itemsRestService.addItem(item).pipe().subscribe();
   }
 
-  addToStorages(newStorage: ItemStorage) {
-    this.storages.push(newStorage);
-    this.newStorage = '';
+  addToStorages(newStorage: string) {
+    this.itemsRestService.addStorage({id: null, name: newStorage}).pipe().subscribe();
+    this.newStorage = null;
   }
 }

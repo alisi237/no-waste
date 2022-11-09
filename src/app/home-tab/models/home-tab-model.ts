@@ -1,4 +1,5 @@
 export interface ItemStorage {
+  id: string;
   name: string;
 }
 
