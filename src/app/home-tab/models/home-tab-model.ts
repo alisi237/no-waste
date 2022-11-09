@@ -4,6 +4,8 @@ export interface ItemStorage {
 
 export interface Item {
   name: string;
-  place: string;
+  date: Date;
+  amount: number;
+  storage: string;
 }
 

@@ -19,31 +19,4 @@ export class HomeTabPage {
     translate.setDefaultLang('en');
     translate.use('en');
   }
-
-  refresh() {
-    this.itemsComponent.addItem({name: 'apple', place: 'fridge'});
-  }
-
-
-  // to be deleted
-  /*
-  refresh() {
-    this.refreshStorages();
-    this.refreshItems();
-    this.inventoryComponent.fillStorages();
-  }
-
-  refreshStorages() {
-    this.storages = this.itemsComponent.getStorages();
-    this.storages.forEach(storage => {
-      this.inventoryComponent.addStorage(storage);
-    });
-  }
-
-  refreshItems() {
-    this.items = this.itemsComponent.getItems();
-    this.items.forEach(item => {
-      this.inventoryComponent.addItem(item);
-    });
-  } */
 }

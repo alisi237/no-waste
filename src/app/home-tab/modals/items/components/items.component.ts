@@ -44,7 +44,7 @@ export class ItemsComponent {
   confirm() {
     this.modal.dismiss(null, 'confirm');
     // id needs to be set via database
-    this.addItem({ name: this.name, place: this.storage });
+    this.addItem({ name: this.name, date: null, amount: null, storage: this.storage });
     this.resetFields();
   }
 

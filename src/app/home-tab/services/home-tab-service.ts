@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { ItemsComponent } from '../modals/items/components/items.component';
 import { Item } from '../models/home-tab-model';
 
 @Injectable({
@@ -16,11 +17,11 @@ export class HomeRestService {
 
   addItem(item: Item): Observable<Item> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    console.log('test');
+    console.log('addItem was triggered');
     
-    return this.http.post<Item>(HomeRestService.DATABASE_URL, {name: 'dingens', place: 'bummens'}, { headers })
+    return this.http.post<Item>(HomeRestService.DATABASE_URL, {name: item.name, place: item.storage}, { headers })
       .pipe(catchError(err => {
-        console.log('tbd', err);
+        console.log('Unexpected error: Could not add item to database.', err);
         return throwError(err);
       }));
 
@@ -30,7 +31,7 @@ export class HomeRestService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get<Item[]>(HomeRestService.DATABASE_URL, { headers })
       .pipe(catchError(err => {
-        console.log('tbd', err);
+        console.log('Unexpected error: Could not get items from database.', err);
         return throwError(err);
       }));
   }
@@ -39,7 +40,7 @@ export class HomeRestService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.delete(HomeRestService.DATABASE_URL + '/' + id, { headers })
       .pipe(catchError(err => {
-        console.log('tbd', err);
+        console.log('Unexpected error: Could not remove item from database.', err);
         return throwError(err);
       }));
   }
