@@ -7,6 +7,7 @@ import { HomeTabPage } from '../home-tab/components/home-tab.page';
 import { ItemsComponentModule } from '../home-tab/modals/items/components/items.module';
 import { InventoryComponentModule } from '../home-tab/modals/inventory/components/inventory.module';
 import { PreferencesPage } from '../preferences/components/preferences.page';
+import { GroupsPage } from '../groups/components/groups.page';
 
 
 
@@ -14,7 +15,8 @@ import { PreferencesPage } from '../preferences/components/preferences.page';
   declarations: [
     ProfilePage,
     HomeTabPage,
-    PreferencesPage
+    PreferencesPage,
+    GroupsPage
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { PreferencesPage } from '../preferences/components/preferences.page';
     HttpClientModule,
     ProfilePage,
     HomeTabPage,
-    PreferencesPage
+    PreferencesPage,
+    GroupsPage
   ]
 })
 export class SharedModule { }

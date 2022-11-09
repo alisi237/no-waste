@@ -1,5 +1,6 @@
 {
     "noWaste": {
+        "title": "NoWaste",
         "cancel": "Cancel",
         "confirm": "Confirm",
         "menu": {
@@ -39,6 +40,9 @@
         },
         "preferences": {
             "header":" Preferences"
+        },
+        "groups": {
+            "header": "Groups"
         },
         "scan": {
             "header": "Scan"
