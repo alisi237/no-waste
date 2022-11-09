@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
 import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
-import { map, take } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Item } from 'src/app/home-tab/models/home-tab-model';
 
 @Component({

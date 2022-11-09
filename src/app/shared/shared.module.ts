@@ -6,13 +6,15 @@ import { ProfilePage } from '../profile/components/profile.page';
 import { HomeTabPage } from '../home-tab/components/home-tab.page';
 import { ItemsComponentModule } from '../home-tab/modals/items/components/items.module';
 import { InventoryComponentModule } from '../home-tab/modals/inventory/components/inventory.module';
+import { PreferencesPage } from '../preferences/components/preferences.page';
 
 
 
 @NgModule({
   declarations: [
     ProfilePage,
-    HomeTabPage
+    HomeTabPage,
+    PreferencesPage
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { InventoryComponentModule } from '../home-tab/modals/inventory/component
     TranslateModule,
     HttpClientModule,
     ProfilePage,
-    HomeTabPage
+    HomeTabPage,
+    PreferencesPage
   ]
 })
 export class SharedModule { }

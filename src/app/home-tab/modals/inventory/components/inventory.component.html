@@ -3,11 +3,11 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button (click)="cancel()">Cancel</ion-button>
+          <ion-button (click)="cancel()">{{ 'noWaste.cancel' | translate}}</ion-button>
         </ion-buttons>
-        <ion-title>INVENTORY</ion-title>
+        <ion-title>{{ 'noWaste.home.inventory.header' | translate}}</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          <ion-button (click)="confirm()" [strong]="true">{{ 'noWaste.confirm' | translate}}</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
