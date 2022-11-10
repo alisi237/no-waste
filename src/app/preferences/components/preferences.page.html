@@ -12,7 +12,8 @@
 <ion-content [fullscreen]="true">
   <ion-item>
     <ion-label>
-      {{ 'noWaste.preferences.language' | translate }}
+      <ion-text>{{ 'noWaste.preferences.language' | translate }}</ion-text>
+      <p>{{ 'noWaste.preferences.chooseLanguage' | translate }}</p>
     </ion-label>
     <ion-text>English</ion-text>
     <ion-toggle color="medium" (ionChange)="changeLanguage()"></ion-toggle>

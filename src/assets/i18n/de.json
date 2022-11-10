@@ -6,7 +6,7 @@
         "menu": {
             "menu": "Menü",
             "home": "Start",
-            "preferences": "Preferenzen",
+            "preferences": "Einstellungen",
             "profile": "Profil",
             "groups": "Gruppen"
         },
@@ -39,7 +39,7 @@
             }
         },
         "preferences": {
-            "header": "Preferenzen",
+            "header": "Einstellungen",
             "language": "Sprache",
             "chooseLanguage": "Wähle Deine Spracheinstellungen"
         },
