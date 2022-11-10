@@ -1,0 +1,57 @@
+{
+    "noWaste": {
+        "title": "NoWaste",
+        "cancel": "Abbrechen",
+        "confirm": "Bestätigen",
+        "menu": {
+            "menu": "Menü",
+            "home": "Start",
+            "preferences": "Preferenzen",
+            "profile": "Profil",
+            "groups": "Gruppen"
+        },
+        "home": {
+            "header": "Start von NoWaste",
+            "addItem": "ITEM HINZUFÜGEN",
+            "showInventory": "INVENTAR",
+            "shoppingList": "EINKAUFSLISTE",
+            "showRecipes": "REZEPTE",
+            "inventory": {
+                "header": "INVENTAR"
+            },
+            "items": {
+                "header": "ITEM HINZUFÜGEN",
+                "name": "PRODUKT NAME",
+                "bestBefore": "MINDESTENS HALTBAR BIS:",
+                "amount": "MENGE:",
+                "storage": "LAGERORT:"
+            }
+        },
+        "profile": {
+            "header": "Profil",
+            "registration": {
+                "register": "Registrieren",
+                "header": "Registrierung",
+                "name": "NAME:",
+                "email": "EMAIL:",
+                "password": "PASSWORT:",
+                "confirm": "PASSWORT BESTÄTIGEN:"
+            }
+        },
+        "preferences": {
+            "header": "Preferenzen",
+            "language": "Sprache",
+            "chooseLanguage": "Wähle Deine Spracheinstellungen"
+        },
+        "groups": {
+            "header": "Gruppen"
+        },
+        "scan": {
+            "header": "Scan"
+        },
+        "tabs": {
+            "home": "Start",
+            "scan": "Scan"
+        }
+    }
+}

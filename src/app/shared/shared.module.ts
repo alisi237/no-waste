@@ -8,6 +8,7 @@ import { ItemsComponentModule } from '../home-tab/modals/items/components/items.
 import { InventoryComponentModule } from '../home-tab/modals/inventory/components/inventory.module';
 import { PreferencesPage } from '../preferences/components/preferences.page';
 import { GroupsPage } from '../groups/components/groups.page';
+import {IonicModule} from '@ionic/angular';
 
 
 
@@ -18,13 +19,14 @@ import { GroupsPage } from '../groups/components/groups.page';
     PreferencesPage,
     GroupsPage
   ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    HttpClientModule,
-    ItemsComponentModule,
-    InventoryComponentModule
-  ],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        HttpClientModule,
+        ItemsComponentModule,
+        InventoryComponentModule,
+        IonicModule
+    ],
   exports: [
     TranslateModule,
     HttpClientModule,

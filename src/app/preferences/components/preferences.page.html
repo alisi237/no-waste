@@ -4,11 +4,18 @@
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      {{ 'noWaste.preferences.header' | translate}}
+      {{ 'noWaste.preferences.header' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ion-item>
+    <ion-label>
+      {{ 'noWaste.preferences.language' | translate }}
+    </ion-label>
+    <ion-text>English</ion-text>
+    <ion-toggle color="medium"></ion-toggle>
+    <ion-text>Deutsch</ion-text>
+  </ion-item>
 </ion-content>

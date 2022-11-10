@@ -39,7 +39,9 @@
             }
         },
         "preferences": {
-            "header":" Preferences"
+            "header":" Preferences",
+            "language": "Language",
+            "chooseLanguage": "Choose your display language"
         },
         "groups": {
             "header": "Groups"
