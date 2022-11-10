@@ -12,17 +12,21 @@ enum Language {
   styleUrls: ['preferences.page.scss']
 })
 export class PreferencesPage {
-  language: Language;
+  language: string;
 
   constructor(private translate: TranslateService) {
   }
 
-  changeLanguage(currentLanguage: string) {
-    console.log(currentLanguage);
-    if (currentLanguage === Language.english) {
+  changeLanguage() {
+    this.language = this.translate.currentLang;
+
+    if (this.languageIsSetToEnglish()) {
       this.translate.use(Language.deutsch);
-    } else {
+    } else if (this.languageIsSetToGerman()){
       this.translate.use(Language.english);
     }
   }
+
+  languageIsSetToEnglish = (): boolean => this.language === Language.english;
+  languageIsSetToGerman = (): boolean => this.language === Language.deutsch;
 }

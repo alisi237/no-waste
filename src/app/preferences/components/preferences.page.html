@@ -15,7 +15,7 @@
       {{ 'noWaste.preferences.language' | translate }}
     </ion-label>
     <ion-text>English</ion-text>
-    <ion-toggle color="medium"></ion-toggle>
+    <ion-toggle color="medium" (ionChange)="changeLanguage()"></ion-toggle>
     <ion-text>Deutsch</ion-text>
   </ion-item>
 </ion-content>
