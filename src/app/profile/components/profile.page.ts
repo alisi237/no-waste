@@ -26,7 +26,7 @@ export class ProfilePage {
     this.passwordConfig = '';
   }
 
-  onWillDismiss() {
+  onWillDismiss($event: any) {
     this.resetFields();
   }
 
