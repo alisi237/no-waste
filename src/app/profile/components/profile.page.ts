@@ -17,7 +17,6 @@ export class ProfilePage {
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
-    translate.use('en');
   }
 
   resetFields() {

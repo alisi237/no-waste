@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppComponent } from '../../app.component';
 
 enum Language {
   english = 'en',
@@ -14,7 +15,7 @@ enum Language {
 export class PreferencesPage {
   language: string;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private app: AppComponent) {
   }
 
   changeLanguage() {
@@ -22,8 +23,10 @@ export class PreferencesPage {
 
     if (this.languageIsSetToEnglish()) {
       this.translate.use(Language.deutsch);
-    } else if (this.languageIsSetToGerman()){
+      this.app.sideMenu(this.translate.currentLang);
+    } else if (this.languageIsSetToGerman()) {
       this.translate.use(Language.english);
+      this.app.sideMenu(this.translate.currentLang);
     }
   }
 

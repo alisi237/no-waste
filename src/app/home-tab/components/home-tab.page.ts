@@ -17,6 +17,5 @@ export class HomeTabPage {
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
-    translate.use('en');
   }
 }
