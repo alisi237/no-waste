@@ -24,7 +24,10 @@
                 "name": "PRODUKT NAME",
                 "bestBefore": "MINDESTENS HALTBAR BIS:",
                 "amount": "MENGE:",
-                "storage": "LAGERORT:"
+                "storage": "LAGERORT:",
+                "placeholder": "z.B. Apfel, ...",
+                "addStorage": "Lagerort hinzufügen",
+                "selectStorage": "Lagerort auswählen"
             }
         },
         "profile": {
