@@ -6,7 +6,8 @@ const grocerieSchema = new mongoose.Schema({
     required: [true, 'Please provide name of food!']
   },
   place: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
+    ref: 'Storage',
     required: [true, 'Please store your food somewhere']
   },
   bestBefore: {

@@ -8,6 +8,6 @@ export interface Item {
   name: string;
   date: Date;
   amount: number;
-  storage: string;
+  storage: ItemStorage['id'];
 }
 

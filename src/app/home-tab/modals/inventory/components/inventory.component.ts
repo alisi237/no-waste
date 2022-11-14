@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
 import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
 import { map } from 'rxjs/operators';
-import { Item } from 'src/app/home-tab/models/home-tab-model';
+import { Item, ItemStorage } from 'src/app/home-tab/models/home-tab-model';
 
 @Component({
   selector: 'app-inventory',
@@ -13,32 +13,32 @@ export class InventoryComponent {
   @ViewChild(IonModal) modal: IonModal;
 
   name: string;
-  storages: any;
+  storages: ItemStorage[];
   items: Item[];
 
-  constructor(private alertController: AlertController, private readonly itemsRestService: HomeRestService) {
+  constructor(private alertController: AlertController, private readonly itemsRestService: HomeRestService, private readonly homeRestService: HomeRestService) {
     this.storages = [];
     this.items = [];
   }
 
   getItems() {
-    this.itemsRestService.getItems().pipe(map((items: Item[]) => items.map(item => this.items.push(item)))).subscribe();
+    this.homeRestService.getItems().pipe().subscribe((item: any) => { 
+      this.items = item.data.items;
+    });
     return this.items;
-    // return this.items;
-  }
-
-  addItem(item: any) {
-    this.itemsRestService.addItem(item).pipe().subscribe();
-    // this.items.push(item);
   }
 
   getStorages() {
+    this.homeRestService.getStorages().pipe().subscribe((storage: any) => { 
+      this.storages = storage.data.storages;
+    });
     return this.storages;
   }
 
+  /*
   addStorage(storage: any) {
     if (!this.storageAlreadyExists(storage)) {
-      this.storages.push({ name: storage, items: new Array() });
+      this.storages.push({ name: storage });
     }
   }
 
@@ -50,7 +50,7 @@ export class InventoryComponent {
       }
     });
     return isIncluded;
-  }
+  }*/
 
   cancel() {
     this.modal.dismiss(null, 'cancel');
@@ -101,7 +101,7 @@ export class InventoryComponent {
           text: 'Yes',
           role: 'confirm',
           handler: () => {
-            //this.removeStorage(storage);
+            this.removeStorage(storage);
           },
         },
       ],
@@ -109,22 +109,11 @@ export class InventoryComponent {
     await alert.present();
   }
 
-  remove(array: any, element: any) {
-    array.splice(array.indexOf(element), 1);
-  }
-/*
   removeStorage(storage: any) {
-    this.remove(this.storages, storage);
-    this.items.forEach(item => {
-      if (item.storage === storage.name) {
-        this.remove(this.items, item);
-      }
-    });
+    this.homeRestService.removeStorage(storage.id).pipe().subscribe();
   }
 
   removeItem(item: Item) {
-    this.itemsRestService.removeItem(item.id).pipe(take(1)).subscribe();
-    //this.remove(this.items, item);
-    //this.remove(storage.items, item);
-  }*/
+    this.homeRestService.removeItem(item.id).pipe().subscribe();
+  }
 }

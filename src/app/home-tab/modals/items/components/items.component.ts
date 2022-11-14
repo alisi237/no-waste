@@ -1,9 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
-import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
-import { Item } from 'src/app/home-tab/models/home-tab-model';
-import { ItemStorage } from 'src/app/home-tab/models/home-tab-model';
-import { map } from 'rxjs/operators';
+import {Component, ViewChild} from '@angular/core';
+import {IonModal} from '@ionic/angular';
+import {HomeRestService} from 'src/app/home-tab/services/home-tab-service';
+import {Item} from 'src/app/home-tab/models/home-tab-model';
+import {ItemStorage} from 'src/app/home-tab/models/home-tab-model';
 
 @Component({
   selector: 'app-items',
@@ -19,20 +18,15 @@ export class ItemsComponent {
   newStorage: string;
   storage: string;
   storages: ItemStorage[];
-  items: Item[];
 
-  constructor(private readonly itemsRestService: HomeRestService) {
+  constructor(private readonly homeRestService: HomeRestService) {
     this.storages = [];
-    this.items = [];
-
-  }
-
-  getItems() {
-    this.itemsRestService.getItems().pipe(map((items: Item[]) => items.map(item => this.items.push(item)))).subscribe();
-    return this.items;
   }
 
   getStorages() {
+    this.homeRestService.getStorages().pipe().subscribe((storage: any) => {
+      this.storages = storage.data.storages;
+    });
     return this.storages;
   }
 
@@ -43,8 +37,13 @@ export class ItemsComponent {
 
   confirm() {
     this.modal.dismiss(null, 'confirm');
-    this.addItem({ id: null, name: this.name, date: this.date, amount: this.amount, storage: this.storage.trim() });
-    this.resetFields();
+    this.homeRestService.getStorages().pipe().subscribe((storages: any) => {
+      // const storageId = storages.find(storage => storage.name === this.storage.trim())?.id;
+      const matchingStorage = storages.data.storages.filter(storage => storage.name === this.storage.trim());
+       const storageId = matchingStorage[0]._id;
+      this.addItem({id: null, name: this.name, date: this.date, amount: this.amount, storage: storageId});
+      this.resetFields();
+    });
   }
 
   resetFields() {
@@ -54,11 +53,11 @@ export class ItemsComponent {
   }
 
   addItem(item: Item) {
-    this.itemsRestService.addItem(item).pipe().subscribe();
+    this.homeRestService.addItem(item).pipe().subscribe();
   }
 
   addToStorages(newStorage: string) {
-    this.itemsRestService.addStorage({id: null, name: newStorage}).pipe().subscribe();
+    this.homeRestService.addStorage({id: null, name: newStorage}).pipe().subscribe();
     this.newStorage = null;
   }
 }

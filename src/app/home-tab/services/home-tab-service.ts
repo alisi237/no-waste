@@ -35,7 +35,7 @@ export class HomeRestService {
       }));
   }
 
-  removeItem(id: number): Observable<any> {
+  removeItem(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.delete(HomeRestService.DATABASE_URL_ITEMS + '/' + id, { headers })
       .pipe(catchError(err => {
@@ -55,7 +55,7 @@ export class HomeRestService {
 
   }
 
-  getStorage(): Observable<ItemStorage[]> {
+  getStorages(): Observable<ItemStorage[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get<ItemStorage[]>(HomeRestService.DATABASE_URL_STORAGES, { headers })
       .pipe(catchError(err => {
@@ -72,4 +72,4 @@ export class HomeRestService {
         return throwError(err);
       }));
   }
-}
+} 

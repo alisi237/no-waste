@@ -38,9 +38,9 @@
         </ion-grid>
         <ion-list>
           <ion-item>
-            <ion-select interface="popover" placeholder="Select storage" [(ngModel)]="storage">
+            <ion-select (click)="getStorages()" interface="popover" placeholder="Select storage" [(ngModel)]="storage">
               <ion-select-option *ngFor="let storage of storages">
-                {{storage}}
+                {{storage.name}}
               </ion-select-option>
             </ion-select>
           </ion-item>
