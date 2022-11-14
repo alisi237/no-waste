@@ -1,8 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonModal, AlertController } from '@ionic/angular';
 import { HomeRestService } from 'src/app/home-tab/services/home-tab-service';
-import { map } from 'rxjs/operators';
-import { Item, ItemStorage } from 'src/app/home-tab/models/home-tab-model';
+import { Item } from 'src/app/home-tab/models/home-tab-model';
 
 @Component({
   selector: 'app-inventory',
@@ -13,44 +12,31 @@ export class InventoryComponent {
   @ViewChild(IonModal) modal: IonModal;
 
   name: string;
-  storages: ItemStorage[];
-  items: Item[];
+  unsortedStorages: any;
+  storages: any;
+  unsortedItems: any;
+  items: any;
+  grouped: any;
 
   constructor(private alertController: AlertController, private readonly itemsRestService: HomeRestService, private readonly homeRestService: HomeRestService) {
-    this.storages = [];
-    this.items = [];
+    this.grouped = [];
   }
 
-  getItems() {
-    this.homeRestService.getItems().pipe().subscribe((item: any) => { 
-      this.items = item.data.items;
+  ngOnInit() {
+    this.fetchData();
+  }
+
+  private async fetchData() {
+    return await Promise.all([
+      this.homeRestService.getItems(),
+      this.homeRestService.getStorages()
+    ]).then(res => {
+      this.unsortedItems = res[0];
+      this.items = this.unsortedItems.data.groceries;
+      this.unsortedStorages = res[1];
+      this.storages = this.unsortedStorages.data.storages;
     });
-    return this.items;
   }
-
-  getStorages() {
-    this.homeRestService.getStorages().pipe().subscribe((storage: any) => { 
-      this.storages = storage.data.storages;
-    });
-    return this.storages;
-  }
-
-  /*
-  addStorage(storage: any) {
-    if (!this.storageAlreadyExists(storage)) {
-      this.storages.push({ name: storage });
-    }
-  }
-
-  storageAlreadyExists(storageName: any) {
-    let isIncluded = false;
-    this.storages.forEach(storage => {
-      if (storage.name === storageName) {
-        isIncluded = true;
-      }
-    });
-    return isIncluded;
-  }*/
 
   cancel() {
     this.modal.dismiss(null, 'cancel');
@@ -61,17 +47,15 @@ export class InventoryComponent {
   }
 
   fillStorages() {
-    /*
-    const items = this.getItems();
-    if(items) {
-      items.forEach(item => {
-        this.storages.forEach(storage => {
-          if(storage.name === item.storage.trim() && !storage.items.includes(item)) {
-            storage.items.push(item);
-          }
-        });
+    this.storages.forEach(storage => {
+      let temp = new this.GroupedList(storage.name);
+      this.items.forEach(item => {
+        if (item.place === storage._id) {
+          temp.itemArray.push(item);
+        }
       });
-    }*/
+      this.grouped.push(temp);
+    });
   }
 
   amountUp(item: any) {
@@ -83,7 +67,7 @@ export class InventoryComponent {
       item.amount -= 1;
     }
     else {
-      //this.removeItem(item);
+      this.removeItem(item);
     }
   }
 
@@ -115,5 +99,14 @@ export class InventoryComponent {
 
   removeItem(item: Item) {
     this.homeRestService.removeItem(item.id).pipe().subscribe();
+  }
+
+  GroupedList = class {
+    storageName: string;
+    itemArray: Item[] = [];
+
+    constructor(storageName: string) {
+      this.storageName = storageName;
+    }
   }
 }

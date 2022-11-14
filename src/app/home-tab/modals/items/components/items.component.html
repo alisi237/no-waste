@@ -38,7 +38,7 @@
         </ion-grid>
         <ion-list>
           <ion-item>
-            <ion-select (click)="getStorages()" interface="popover" placeholder="{{ 'noWaste.home.items.selectStorage' | translate}}" [(ngModel)]="storage">
+            <ion-select (click)="fetchData()" interface="popover" placeholder="{{ 'noWaste.home.items.selectStorage' | translate}}" [(ngModel)]="storage">
               <ion-select-option *ngFor="let storage of storages">
                 {{storage.name}}
               </ion-select-option>

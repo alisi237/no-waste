@@ -12,19 +12,19 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-list *ngFor="let storage of storages">
+      <ion-list *ngFor="let storage of grouped">
         <ion-list-header>
-          {{ storage.name }}
+          {{ storage['storageName'] }}
           <ion-button class="button-header" (click)="showAlert(storage)">X</ion-button>
         </ion-list-header>
-        <ion-item *ngFor="let item of storage.items">
+        <ion-item *ngFor="let item of storage.itemArray">
           <ion-avatar slot="start">
             <!-- <img src="./food.jpeg" /> -->
             <ion-icon name="ellipse"></ion-icon>
           </ion-avatar>
           <ion-label>
-            <h2> {{ item.name }} </h2>
-            <h3> {{ item.date }} </h3>
+            <h2> {{ item['name'] }} </h2>
+            <h3> {{ item['date'] }} </h3>
           </ion-label>
           <ion-label slot="end">
             <h1>

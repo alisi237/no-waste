@@ -15,7 +15,7 @@
         <app-items></app-items>
       </ion-col>
       <ion-col>
-        <ion-button id="open-inventory-modal" class="home-button">{{ 'noWaste.home.showInventory' | translate}}</ion-button>
+        <ion-button (click)="refresh()" id="open-inventory-modal" class="home-button">{{ 'noWaste.home.showInventory' | translate}}</ion-button>
         <app-inventory></app-inventory>
       </ion-col>
     </ion-row>

@@ -18,4 +18,8 @@ export class HomeTabPage {
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
   }
+
+  refresh() {
+    this.inventoryComponent.fillStorages();
+  }
 }

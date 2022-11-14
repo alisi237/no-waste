@@ -26,13 +26,13 @@ export class HomeRestService {
 
   }
 
-  getItems(): Observable<Item[]> {
+  getItems(): Promise<Item[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get<Item[]>(HomeRestService.DATABASE_URL_ITEMS, { headers })
       .pipe(catchError(err => {
         console.log('Unexpected error: Could not get items from database.', err);
         return throwError(err);
-      }));
+      })).toPromise();
   }
 
   removeItem(id: string): Observable<any> {
@@ -55,13 +55,13 @@ export class HomeRestService {
 
   }
 
-  getStorages(): Observable<ItemStorage[]> {
+  getStorages(): Promise<ItemStorage[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.get<ItemStorage[]>(HomeRestService.DATABASE_URL_STORAGES, { headers })
       .pipe(catchError(err => {
         console.log('Unexpected error: Could not get storage from database.', err);
         return throwError(err);
-      }));
+      })).toPromise();
   }
 
   removeStorage(id: number): Observable<any> {
