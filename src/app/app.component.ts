@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
+import english from '../assets/i18n/en.json';
+import german from '../assets/i18n/de.json';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent {
   constructor(private platform: Platform, private translate: TranslateService) {
     translate.setDefaultLang('en');
     translate.use('en');
-    this.sideMenu();
+    this.sideMenu(translate.currentLang);
     this.initializeApp();
   }
 
@@ -22,26 +24,27 @@ export class AppComponent {
     });
   }
 
-  sideMenu() {
+  sideMenu(currentLanguage: string) {
+    console.log("sideMenu(): currentLanguage: " + currentLanguage);
     this.navigate =
       [
         {
-          title: 'Home',
+          title: `${currentLanguage === 'en' ? english.noWaste.menu.home : german.noWaste.menu.home}`,
           url: '/home-tab',
           icon: 'home'
         },
         {
-          title: 'Preferences',
+          title: `${currentLanguage === 'en' ? english.noWaste.menu.preferences : german.noWaste.menu.preferences}`,
           url: '/preferences',
           icon: 'cog'
         },
         {
-          title: 'Profile',
+          title: `${currentLanguage === 'en' ? english.noWaste.menu.profile : german.noWaste.menu.profile}`,
           url: '/profile',
           icon: 'person-circle'
         },
         {
-          title: 'Groups',
+          title: `${currentLanguage === 'en' ? english.noWaste.menu.groups : german.noWaste.menu.groups}`,
           url: '/groups',
           icon: 'people-circle'
         },

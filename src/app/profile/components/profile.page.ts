@@ -13,21 +13,20 @@ export class ProfilePage {
   name: string;
   email: string;
   password: string;
-  passwconf: string;
+  passwordConfig: string;
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
-    translate.use('en');
   }
 
   resetFields() {
     this.name = '';
     this.email = '';
     this.password = '';
-    this.passwconf = '';
+    this.passwordConfig = '';
   }
 
-  onWillDismiss(event: Event) {
+  onWillDismiss($event: any) {
     this.resetFields();
   }
 

@@ -24,7 +24,10 @@
                 "name": "PRODUCT NAME:",
                 "bestBefore": "BEST BEFORE:",
                 "amount": "AMOUNT:",
-                "storage": "STORAGE:"
+                "storage": "STORAGE:",
+                "placeholder": "e.g. apple, ...",
+                "addStorage": "add new storage",
+                "selectStorage": "select storage"
             }
         },
         "profile": {
@@ -39,7 +42,9 @@
             }
         },
         "preferences": {
-            "header":" Preferences"
+            "header":" Preferences",
+            "language": "Language",
+            "chooseLanguage": "Choose your display language"
         },
         "groups": {
             "header": "Groups"
