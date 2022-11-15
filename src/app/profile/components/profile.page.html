@@ -10,40 +10,44 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button id="open-registration" expand="block">{{ 'noWaste.profile.registration.register' | translate}}</ion-button>
-    <ion-modal #modal trigger="open-registration" (willDismiss)="onWillDismiss($event)">
-        <ion-content>
-          <ion-toolbar>
-            <ion-header>
-              <ion-toolbar>
-                <ion-buttons slot="start">
-                  <ion-button (click)="modal.dismiss(null, 'cancel')">{{ 'noWaste.cancel' | translate}}</ion-button>
-                </ion-buttons>
-                <ion-title>{{ 'noWaste.profile.registration.header' | translate}}</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button (click)="modal.dismiss(null, 'confirm')" [strong]="true">{{ 'noWaste.confirm' | translate}}</ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-header>
-          </ion-toolbar>
-          <ion-list>
-            <ion-item>
-              <ion-label position="stacked">{{ 'noWaste.profile.registration.name' | translate}}</ion-label>
-              <ion-input type="text" placeholder="E.g. John Doe" [value]="name"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">{{ 'noWaste.profile.registration.email' | translate}}</ion-label>
-              <ion-input type="email" placeholder="email@domain.com" [value]="email"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">{{ 'noWaste.profile.registration.password' | translate}}</ion-label>
-              <ion-input type="password" [value]="password"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="stacked">{{ 'noWaste.profile.registration.confirm' | translate}}</ion-label>
-              <ion-input type="password" [value]="passwordConfig"></ion-input>
-            </ion-item>
-          </ion-list>
-        </ion-content>
-    </ion-modal>
+  <ion-button id="open-registration" expand="block">{{ 'noWaste.profile.registration.register' | translate}}
+  </ion-button>
+  <ion-modal #modal trigger="open-registration" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="modal.dismiss(null, 'cancel')">{{ 'noWaste.cancel' | translate}}</ion-button>
+              </ion-buttons>
+              <ion-title>{{ 'noWaste.profile.registration.header' | translate}}</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="modal.dismiss(null, 'confirm')" [strong]="true">{{ 'noWaste.confirm' | translate}}
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">{{ 'noWaste.profile.registration.name' | translate}}</ion-label>
+            <ion-input type="text" placeholder="E.g. John Doe" [value]="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">{{ 'noWaste.profile.registration.email' | translate}}</ion-label>
+            <ion-input type="email" placeholder="email@domain.com" [value]="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">{{ 'noWaste.profile.registration.password' | translate}}</ion-label>
+            <ion-input type="password" [value]="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">{{ 'noWaste.profile.registration.confirm' | translate}}</ion-label>
+            <ion-input type="password" [value]="passwordConfig"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
