@@ -23,7 +23,6 @@ export class HomeRestService {
         console.log('Unexpected error: Could not add item to database.', err);
         return throwError(err);
       }));
-
   }
 
   getItems(): Promise<Item[]> {
