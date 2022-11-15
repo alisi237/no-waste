@@ -41,3 +41,21 @@ exports.deleteGrocerie = catchAsync(async (req, res, next) => {
     data: null
   })
 })
+
+exports.updateGrocerie = catchAsync(async (req, res, next) => {
+  const grocerie = await Grocerie.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  })
+
+  if (!grocerie) {
+    return next(new AppError('No document with that ID', 404))
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      grocerie
+    }
+  })
+})

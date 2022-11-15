@@ -12,7 +12,7 @@ router
 router
   .route('/:id')
   .delete(grocerieController.deleteGrocerie)
+  .patch(grocerieController.updateGrocerie)
 // .get(grocerieController.getGrocerie)
-// .patch(grocerieController.updateGrocerie)
 
 module.exports = router
