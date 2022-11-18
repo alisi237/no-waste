@@ -11,7 +11,7 @@
 
 <ion-content class="ion-padding">
   <ion-button id="open-login" expand="block">{{ 'noWaste.profile.login' | translate }}</ion-button>
-  <ion-modal #modal trigger="open-login" (willDismiss)="onWillDismiss($event)">
+  <ion-modal #modal trigger="open-login" class="login" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-content>
         <ion-toolbar>
@@ -42,7 +42,7 @@
     </ng-template>
   </ion-modal>
   <ion-button id="open-registration" expand="block">{{ 'noWaste.profile.registration.register' | translate}}</ion-button>
-  <ion-modal #modal trigger="open-registration" (willDismiss)="onWillDismiss($event)">
+  <ion-modal #modal trigger="open-registration" class="registration" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-content>
         <ion-toolbar>
