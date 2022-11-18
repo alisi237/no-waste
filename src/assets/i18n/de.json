@@ -40,7 +40,8 @@
                 "password": "PASSWORT:",
                 "confirm": "PASSWORT BESTÄTIGEN:",
                 "placeHolder": "z.B. John Doe"
-            }
+            },
+            "login": "Anmelden"
         },
         "preferences": {
             "header": "Einstellungen",

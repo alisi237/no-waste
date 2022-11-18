@@ -40,7 +40,8 @@
                 "password": "PASSWORD:",
                 "confirm": "CONFIRM PASSWORD:",
                 "placeHolder": "E.g. John Doe"
-            }
+            },
+            "login": "Login"
         },
         "preferences": {
             "header":" Preferences",
