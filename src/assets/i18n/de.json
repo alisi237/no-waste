@@ -38,7 +38,8 @@
                 "name": "NAME:",
                 "email": "EMAIL:",
                 "password": "PASSWORT:",
-                "confirm": "PASSWORT BESTÄTIGEN:"
+                "confirm": "PASSWORT BESTÄTIGEN:",
+                "placeHolder": "z.B. John Doe"
             }
         },
         "preferences": {
