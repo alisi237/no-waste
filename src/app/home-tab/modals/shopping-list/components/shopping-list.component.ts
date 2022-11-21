@@ -10,6 +10,7 @@ export class ShoppingListComponent {
   @ViewChild(IonModal) modal: IonModal;
 
   amount = 0;
+  itemAdded = false;
   private name: string;
 
   constructor() {
@@ -33,5 +34,10 @@ export class ShoppingListComponent {
     } else {
       console.log('Amount has reached 0');
     }
+  }
+
+  addItemToShoppingList() {
+    this.itemAdded = true;
+    return this.itemAdded;
   }
 }

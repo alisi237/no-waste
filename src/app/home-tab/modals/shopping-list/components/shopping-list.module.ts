@@ -7,6 +7,7 @@ import { ShoppingListComponent } from './shopping-list.component';
 import { ShoppingListComponentRoutingModule } from './shopping-list-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
+import {ShoppingListItemComponentModule} from '../modals/shopping-list-item/components/shopping-list-item.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     ShoppingListComponentRoutingModule,
     TranslateModule,
     HttpClientModule,
+    ShoppingListItemComponentModule,
   ],
   declarations: [ShoppingListComponent],
   exports: [ShoppingListComponent]
