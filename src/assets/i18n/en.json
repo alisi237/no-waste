@@ -28,6 +28,9 @@
                 "placeholder": "e.g. apple, ...",
                 "addStorage": "add new storage",
                 "selectStorage": "select storage"
+            },
+            "shopping": {
+                "header": "SHOPPING LIST"
             }
         },
         "profile": {

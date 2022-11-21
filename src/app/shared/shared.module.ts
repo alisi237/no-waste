@@ -9,6 +9,7 @@ import { InventoryComponentModule } from '../home-tab/modals/inventory/component
 import { PreferencesPage } from '../preferences/components/preferences.page';
 import { GroupsPage } from '../groups/components/groups.page';
 import {IonicModule} from '@ionic/angular';
+import {ShoppingListComponentModule} from '../home-tab/modals/shopping-list/components/shopping-list.module';
 
 
 
@@ -25,7 +26,8 @@ import {IonicModule} from '@ionic/angular';
         HttpClientModule,
         ItemsComponentModule,
         InventoryComponentModule,
-        IonicModule
+        IonicModule,
+        ShoppingListComponentModule
     ],
   exports: [
     TranslateModule,

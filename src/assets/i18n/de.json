@@ -28,6 +28,9 @@
                 "placeholder": "z.B. Apfel, ...",
                 "addStorage": "Lagerort hinzufügen",
                 "selectStorage": "Lagerort auswählen"
+            },
+            "shopping": {
+              "header": "EINKAUFSLISTE"
             }
         },
         "profile": {
