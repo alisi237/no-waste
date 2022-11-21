@@ -9,6 +9,7 @@ import {IonModal} from '@ionic/angular';
 export class ShoppingListComponent {
   @ViewChild(IonModal) modal: IonModal;
 
+  amount = 0;
   private name: string;
 
   constructor() {
@@ -22,15 +23,15 @@ export class ShoppingListComponent {
     this.modal.dismiss(this.name, 'confirm');
   }
 
-  amountUp(item: any) {
-    item.amount += 1;
+  amountUp() {
+    this.amount += 1;
   }
 
-  amountDown(item: any) {
-    if (item.amount > 1) {
-      item.amount -= 1;
+  amountDown() {
+    if (this.amount > 1) {
+      this.amount -= 1;
     } else {
-
+      console.log('Amount has reached 0');
     }
   }
 }

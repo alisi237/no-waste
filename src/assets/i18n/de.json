@@ -30,7 +30,9 @@
                 "selectStorage": "Lagerort auswählen"
             },
             "shopping": {
-              "header": "EINKAUFSLISTE"
+              "header": "EINKAUFSLISTE",
+              "placeholder": "Lebensmittel Name",
+              "amount": "Menge"
             }
         },
         "profile": {

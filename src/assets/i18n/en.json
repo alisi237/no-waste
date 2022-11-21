@@ -30,7 +30,9 @@
                 "selectStorage": "select storage"
             },
             "shopping": {
-                "header": "SHOPPING LIST"
+                "header": "SHOPPING LIST",
+                "placeholder": "Enter groceries name",
+                "amount": "Amount"
             }
         },
         "profile": {
