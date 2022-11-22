@@ -2,14 +2,9 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { ProfilePage } from './profile.page';
-=======
->>>>>>> 100b147df5c1895588251dce7109cfaa666a238b
-
 import { ProfilePageRoutingModule } from './profile-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import {ProfilePage} from "./profile.page";
 
 @NgModule({
   imports: [

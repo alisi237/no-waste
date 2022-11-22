@@ -1,5 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
-import {IonModal} from '@ionic/angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
+import { ShoppingListItemComponent } from "../modals/shopping-list-item/components/shopping-list-item.component";
 
 @Component({
   selector: 'app-shopping-list',
@@ -9,35 +10,21 @@ import {IonModal} from '@ionic/angular';
 export class ShoppingListComponent {
   @ViewChild(IonModal) modal: IonModal;
 
-  amount = 0;
-  itemAdded = false;
-  private name: string;
+  shoppingList: ShoppingListItemComponent[] = [];
+  shoppingListItem: ShoppingListItemComponent;
 
   constructor() {
   }
 
   cancel() {
-    this.modal.dismiss(null, 'cancel');
+    this.modal.dismiss('cancel');
   }
 
   confirm() {
-    this.modal.dismiss(this.name, 'confirm');
-  }
-
-  amountUp() {
-    this.amount += 1;
-  }
-
-  amountDown() {
-    if (this.amount > 1) {
-      this.amount -= 1;
-    } else {
-      console.log('Amount has reached 0');
-    }
+    this.modal.dismiss('confirm');
   }
 
   addItemToShoppingList() {
-    this.itemAdded = true;
-    return this.itemAdded;
+    this.shoppingList.push(this.shoppingListItem);
   }
 }

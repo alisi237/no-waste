@@ -9,6 +9,9 @@ import {IonModal} from '@ionic/angular';
 export class ShoppingListItemComponent {
   @ViewChild(IonModal) modal: IonModal;
 
+  name: string;
+  amount: number;
+
   constructor() {
   }
 }
