@@ -8,8 +8,8 @@ import { ItemsComponentModule } from '../home-tab/modals/items/components/items.
 import { InventoryComponentModule } from '../home-tab/modals/inventory/components/inventory.module';
 import { PreferencesPage } from '../preferences/components/preferences.page';
 import { GroupsPage } from '../groups/components/groups.page';
-import {IonicModule} from '@ionic/angular';
-import {ShoppingListComponentModule} from '../home-tab/modals/shopping-list/components/shopping-list.module';
+import { IonicModule } from '@ionic/angular';
+import { ShoppingListComponentModule } from '../home-tab/modals/shopping-list/components/shopping-list.module';
 
 
 

@@ -8,7 +8,6 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-item>
     <ion-label>
@@ -16,7 +15,7 @@
       <p>{{ 'noWaste.preferences.chooseLanguage' | translate }}</p>
     </ion-label>
     <ion-text>English</ion-text>
-    <ion-toggle color="medium" (ionChange)="changeLanguage()"></ion-toggle>
+    <ion-toggle (ionChange)="changeLanguage()" color="medium"></ion-toggle>
     <ion-text>Deutsch</ion-text>
   </ion-item>
 </ion-content>

@@ -29,7 +29,7 @@ export class ItemsComponent {
     this.fetchData();
   }
 
-  private async fetchData() {
+  async fetchData() {
     return await Promise.all([
       this.homeRestService.getStorages()
     ]).then(res => {

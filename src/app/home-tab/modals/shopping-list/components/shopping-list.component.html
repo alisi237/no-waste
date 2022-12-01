@@ -12,26 +12,13 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-
-      <!-- <ion-list [inset]="true" lines="full">
-        <ion-item>
-          <ion-input placeholder="{{ 'noWaste.home.shopping.placeholder' | translate }}"></ion-input>
-          <ion-button slot="end" (click)="amountDown()">
-            <ion-icon name="add"></ion-icon>
-          </ion-button>
-          <ion-text slot="end">{{ this.amount }}</ion-text>
-          <ion-button slot="end" (click)="amountUp()">
-            <ion-icon name="add"></ion-icon>
-          </ion-button>
-        </ion-item>
-      </ion-list> -->
       <ion-list *ngFor="let listItem of shoppingList">
         <app-shopping-list-item></app-shopping-list-item>
       </ion-list>
       <ion-item>
-        <ion-input placeholder="Enter Item" id="shopping-item-name"></ion-input>
-        <ion-input placeholder="Enter Amount" id="shopping-item-amount"></ion-input>
-        <ion-button slot="end" id="add-shopping-list-item" (click)="addItemToShoppingList()" type="submit">
+        <ion-input id="shopping-item-name" placeholder="Enter Item"></ion-input>
+        <ion-input id="shopping-item-amount" placeholder="Enter Amount"></ion-input>
+        <ion-button (click)="addItemToShoppingList()" id="add-shopping-list-item" slot="end" type="submit">
           <ion-icon name="add"></ion-icon>
         </ion-button>
       </ion-item>

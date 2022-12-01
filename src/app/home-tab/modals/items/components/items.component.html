@@ -14,22 +14,24 @@
     <ion-content class="ion-padding">
       <ion-item>
         <ion-label position="stacked">{{ 'noWaste.home.items.name' | translate}}</ion-label>
-        <ion-input type="text" placeholder="{{ 'noWaste.home.items.placeholder' | translate }}" [(ngModel)]="name"></ion-input>
+        <ion-input [(ngModel)]="name" placeholder="{{ 'noWaste.home.items.placeholder' | translate }}"
+                   type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">{{ 'noWaste.home.items.bestBefore' | translate}}</ion-label>
-        <ion-input type="date" [(ngModel)]="date"></ion-input>
+        <ion-input [(ngModel)]="date" type="date"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">{{ 'noWaste.home.items.amount' | translate}}</ion-label>
-        <ion-input placeholder="0" type="number" [(ngModel)]="amount"></ion-input>
+        <ion-input [(ngModel)]="amount" placeholder="0" type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">{{ 'noWaste.home.items.storage' | translate}}</ion-label>
         <ion-grid class="storage-grid">
           <ion-row>
             <ion-col size="10">
-              <ion-input type="text" placeholder="{{ 'noWaste.home.items.addStorage' | translate}}" [(ngModel)]="newStorage"></ion-input>
+              <ion-input [(ngModel)]="newStorage" placeholder="{{ 'noWaste.home.items.addStorage' | translate}}"
+                         type="text"></ion-input>
             </ion-col>
             <ion-col size="2">
               <ion-button (click)="addToStorages(newStorage)">+</ion-button>
@@ -38,7 +40,8 @@
         </ion-grid>
         <ion-list>
           <ion-item>
-            <ion-select (click)="fetchData()" interface="popover" placeholder="{{ 'noWaste.home.items.selectStorage' | translate}}" [(ngModel)]="storage">
+            <ion-select (click)="fetchData()" [(ngModel)]="storage"
+                        interface="popover" placeholder="{{ 'noWaste.home.items.selectStorage' | translate}}">
               <ion-select-option *ngFor="let storage of storages">
                 {{storage.name}}
               </ion-select-option>
